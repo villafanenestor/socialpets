@@ -15,4 +15,9 @@ public class IndexController {
     public String test(){
         return "Testeando";
     }
+
+    @GetMapping("/ejemplo")
+    public String ejemplo(){
+        return "ejemplo";
+    }
 }
