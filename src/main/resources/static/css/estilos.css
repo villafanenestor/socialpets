@@ -5,6 +5,14 @@
     --color-title: #001A49;
 }
 
+.grid1{
+    min-height: 1px;
+    margin-left: 2.89256198%;
+    float: left;
+    letter-spacing: normal;
+}
+
+
 body {
     background-color: #144c53;
     font-family: 'Poppins', sans-serif;
