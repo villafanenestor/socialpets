@@ -11,6 +11,8 @@
 >
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/login.css">
+    
 
     <meta name="theme-color" content="#2091F9">
 
@@ -19,7 +21,6 @@
         content="Estas listo para salvar a un nuevo amigo y que forme parte de tu familia? Somos SocialPets y nos encargamos de ayudar a encontrar un hogar a animales sin hogar, ¡Bienvenido!.">
 </head> 
 <body>
-
     <header class="hero">
         <nav class="nav container">
             <div class="nav__logo">
@@ -42,26 +43,50 @@
                     <a href="#" class="nav__links">Rescata un amigo</a>
                 </li>
                 <li class="nav__items">
-                    <a href="Login.html" class="nav__links">Inicia sesion/registrate</a>
-                </li>
+                  <a href="register.html" class="nav__links">Inicia sesion/registrate</a>
+              </li>
 
             </ul>
 
         </nav>
+         
+        <div class="popup">
+           
+            <div class="form">
+                <h2>Inicia sesion</h2>
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Ingresa tu Email">
+                </div>
+                <div class="form-element">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Ingresa tu Contraseña">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Recordarme<a href=""></a></label>
+                </div>
+        
+                <div class="form-element">
+                    <label for="register" id="login"></label>
+                    <button>Inicia sesion</button>
+                </div>
+                <div class="form-element">
+                    <label for="register" id="register">Eres nuevo?</label>
+                    <a href="register.html">
+                        <button>Registrate</button>
+                    </a>   
+                </div>
+                <div class="form-element">
+                    <a href="#">Olvidaste tu Contraseña?</a>
 
-        <section class="hero__container container">
-            <div class="title">
-                <h1>Nuestros valores</h1>
-               
-               </div>
-            <p class="hero__paragraph">Somos un equipo dedicado a salvar animales los cuales no cuentan con un hogar
-                se encuentran en peligro o no son amados, Nuestro objetivo es encontrarles un hogar en el cual sean amados
-                y protegidos, jamas sean abandonados
-            </p>
-            <a href="#" class="cta">¡Adopta ahora!</a>
-        </section>
+                </div>
+
+            </div>
+        </div>
+        
+
     </header>
-
     <main>  
         <section class="footer__copy container">
             <div class="footer__social">
@@ -77,6 +102,8 @@
     <script src="./js/slider.js"></script>
     <script src="./js/questions.js"></script>
     <script src="./js/menu.js"></script>
-</body>
 
-</html>
+
+    
+
+</body>
