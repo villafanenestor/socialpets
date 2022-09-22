@@ -46,4 +46,8 @@ public class IndexController {
         return "registerpersonas";
     }
     
+    @GetMapping("/fpass")
+    public String fpass(){
+        return "fpass";
+    }
 }
