@@ -25,4 +25,25 @@ public class IndexController {
     public String fotter(){
         return "fotter/fotter";
     }
+
+    @GetMapping("/loginpersonas")
+    public String login1(){
+        return "loginpersonas";
+    }
+
+    @GetMapping("/loginfundacion")
+    public String login2(){
+        return "loginfundacion";
+    }
+
+    @GetMapping("/registrof")
+    public String registerf(){
+        return "registrof";
+    }
+
+    @GetMapping("/registerpersonas")
+    public String register1(){
+        return "registerpersonas";
+    }
+    
 }
