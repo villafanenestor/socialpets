@@ -20,41 +20,9 @@
 </head> 
 <body>
 
-    <header class="hero">
-        <nav class="nav container">
-            <div class="nav__logo">
-              
-                <img src="./images/SocialPetlogo-removebg-preview.png" class="about__icon2">
-                
-            </div>
+    <div th:replace="fragments/header"></div>
 
-            <ul class="nav__link nav__link--menu">
-                <li class="nav__items">
-                    <a href="Index.html" class="nav__links">Inicio</a>
-                </li>
-                <li class="nav__items">
-                    <a href="QuienesSomos.html" class="nav__links">¿Quienes somos?</a>
-                </li>
-                <li class="nav__items">
-                    <a href="Contactanos.html" class="nav__links">Contactanos</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#" class="nav__links">Rescata un amigo</a>
-                </li>
-                <li class="nav__items">
-                    <a href="Login.html" class="nav__links">Inicia sesion/registrate</a>
-                </li>
 
-            </ul>
-
-        </nav>
-
-        <section class="hero__container container">
-            <h1 class="hero__title">Salva un amigo para toda la ¡VIDA!</h1>
-            <p class="hero__paragraph">Salva un animal adoptandolo, brindale un hogar y a cambio obten su gratitud y amor.</p>
-            <a href="#" class="cta">¡Salvalos ahora!</a>
-        </section>
-    </header>
 
     <main>
         <section class="container about">
