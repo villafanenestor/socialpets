@@ -1,26 +1,22 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SocialPets</title>
-    <link rel="shortcut icon" href="./images/SocialPetlogo.jpeg" type="image/x-icon">
-   
->
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="./css/normalize.css">
-
-    <meta name="theme-color" content="#2091F9">
-
-    <meta name="title" content="¡Salva y adopta un nuevo amigo!">
-    <meta name="description"
-        content="Estas listo para salvar a un nuevo amigo y que forme parte de tu familia? Somos SocialPets y nos encargamos de ayudar a encontrar un hogar a animales sin hogar, ¡Bienvenido!.">
-</head> 
+ <!-- Fragmento Head -->
+ <div th:replace="fragments/head"></div>
+ <!-- Fragmento Head --> 
 <body>
 
-    <div th:replace="fragments/header"></div>
+    <header class="hero">
+        
+        <!-- Fragmento Nav -->
+        <div th:replace="fragments/headerNav"></div>
+        <!-- Fragmento Nav -->
+    
+        <section class="hero__container container">
+            <h1 class="hero__title">Salva un amigo para toda la ¡VIDA!</h1>
+            <p class="hero__paragraph">Salva un animal adoptandolo, brindale un hogar y a cambio obten su gratitud y amor.</p>
+            <a href="#" class="cta">¡Salvalos ahora!</a>
+        </section>
+    
+    </header>
+
 
 
 

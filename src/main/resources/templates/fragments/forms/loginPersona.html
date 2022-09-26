@@ -1,0 +1,37 @@
+<div class="popup">
+
+    <form action="#" th:action="@{/user/loginUser" method="post" th:objet="${user}">
+        <div class="form">
+            <h2>Inicia sesion</h2>
+            <div class="form-element">
+                <label for="emailP">Email</label>
+                <input  type="text" id="emailP"  th:field="*{email}" placeholder="Ingresa tu Email">
+            </div>
+            <div class="form-element">
+                <label for="passwordP">Contraseña</label>
+                <input  type="password" id="passwordP"  th:field="*{password}" placeholder="Ingresa tu Contraseña">
+            </div>
+            <div class="form-element">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Recordarme<a href=""></a></label>
+            </div>
+            
+            <div class="form-element">
+                <label for="login" id="login"></label>
+                <button type="submit"  class="send_btn">Inicia sesion</button>
+            </div>
+            <div class="form-element">
+                <label for="register" id="register">Eres nuevo?</label>
+                <a href="registerpersonas">
+                    <button>Registrate</button>
+                </a>   
+            </div>
+            
+            <div class="form-element">
+                <a href="fpass">Olvidaste tu Contraseña?</a>
+                <a href="fpass"><h2>FOrmulario persona</h2>?</a>
+    
+            </div>
+        </div>
+    </form>
+</div>

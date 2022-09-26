@@ -1,56 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SocialPets</title>
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
-   
->
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/login.css">
-    
-
-    <meta name="theme-color" content="#2091F9">
-
-    <meta name="title" content="¡Salva y adopta un nuevo amigo!">
-    <meta name="description"
-        content="Estas listo para salvar a un nuevo amigo y que forme parte de tu familia? Somos SocialPets y nos encargamos de ayudar a encontrar un hogar a animales sin hogar, ¡Bienvenido!.">
-</head> 
+ <!-- Fragmento Head -->
+ <div th:replace="fragments/head"></div>
+ <!-- Fragmento Head --> 
 <body>
     <header class="hero">
-        <nav class="nav container">
-            <div class="nav__logo">
-              
-                <img src="./images/SocialPetlogo-removebg-preview.png" class="about__icon2">
-                
-            </div>
-
-            <ul class="nav__link nav__link--menu">
-                <li class="nav__items">
-                    <a href="index " class="nav__links">Inicio</a>
-                </li>
-                <li class="nav__items">
-                    <a href="/nosotros" class="nav__links">¿Quienes somos?</a>
-                </li>
-                <li class="nav__items">
-                    <a href="/contacto" class="nav__links">Contactanos</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#" class="nav__links">Rescata un amigo</a>
-                </li>
-                <li class="nav__items">
-                    <a href="/loginpersonas" class="nav__links">Soy persona</a>
-                </li>
-                <li class="nav__items">
-                    <a href="/loginfundacion" class="nav__links">Soy Fundacion</a>
-                </li>
-            </ul>
-
-        </nav>
+        <!-- Fragmento Nav -->
+        <div th:replace="fragments/headerNav"></div>
+        <!-- Fragmento Nav -->
          
         <div class="popup">
            

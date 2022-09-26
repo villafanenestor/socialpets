@@ -6,6 +6,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,7 +24,7 @@ public class MascotaModel {
 
     @Column(name = "Tipo")
     private String type;
-    private String raza;
+    private String raza;    
     private String peso;
     // Relacion con la tabal de obsevacion mascotas
     private String observaciones;
@@ -31,5 +32,9 @@ public class MascotaModel {
     private GenderEnum genderEnum;
     private String ubicacion;
     private String foto;
+    private boolean adoptada= false;
+
+    @ManyToOne
+    private Adopcion adopcion;
 
 }

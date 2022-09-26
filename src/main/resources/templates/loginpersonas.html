@@ -22,35 +22,9 @@
 </head> 
 <body>
     <header class="hero">
-        <nav class="nav container">
-            <div class="nav__logo">
-              
-                <img src="./images/SocialPetlogo-removebg-preview.png" class="about__icon2">
-                
-            </div>
-
-            <ul class="nav__link nav__link--menu">
-                <li class="nav__items">
-                    <a href="index " class="nav__links">Inicio</a>
-                </li>
-                <li class="nav__items">
-                    <a href="/nosotros" class="nav__links">¿Quienes somos?</a>
-                </li>
-                <li class="nav__items">
-                    <a href="/contacto" class="nav__links">Contactanos</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#" class="nav__links">Rescata un amigo</a>
-                </li>
-                <li class="nav__items">
-                    <a href="/loginpersonas" class="nav__links">Soy persona</a>
-                </li>
-                <li class="nav__items">
-                    <a href="/loginfundacion" class="nav__links">Soy Fundacion</a>
-                </li>
-            </ul>
-
-        </nav>
+         <!-- Fragmento Nav -->
+        <div th:replace="fragments/headerNav"></div>
+        <!-- Fragmento Nav -->
         
             <div class="popup">
            
