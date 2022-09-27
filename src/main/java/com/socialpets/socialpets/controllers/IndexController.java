@@ -12,7 +12,7 @@ import com.socialpets.socialpets.models.User;
 @Controller
 public class IndexController {
     
-    @GetMapping({"/", "/index", "/home", "inicio"})
+    @GetMapping({"/", "/index"})
     public String index(){
         return "Index";
     }
@@ -56,11 +56,23 @@ public class IndexController {
     public String fpass(){
         return "fpass";
     }
+    
+    @GetMapping("/register")
+    public String register(){
+        return "register";
+    }
+
+
 
     @GetMapping("/login")
     public String registerf(Model model){
         model.addAttribute("user", new User());
         return "loginPage";
+    }
+
+    @GetMapping({"/home", "/inicio"})
+    public String home(){
+        return "home";
     }
             
 

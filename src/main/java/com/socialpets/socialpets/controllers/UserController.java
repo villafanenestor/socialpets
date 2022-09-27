@@ -6,8 +6,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.socialpets.socialpets.exceptions.MyCustomException;
 import com.socialpets.socialpets.models.User;
@@ -21,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserController {
 
@@ -70,16 +73,21 @@ public class UserController {
     }
 
     
+
+    
     
     @PostMapping("/login")
-    public void login(@ModelAttribute("user") User user, Model model){
+    public ModelAndView login(@ModelAttribute("user") User user, Model model){
         System.out.println("Email: "+user.email+" Password: "+user.password);
 
-        //     boolean userExist = userService.login(email, password);
-        // } catch (Exception e) {
-        //     // TODO: handle exception
-        //     System.out.println(e);
-        // }
+        try{
+            boolean userExist = userService.login(user.email, user.password);
+            return new ModelAndView("redirect:/home");
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println(e);
+            return new ModelAndView("redirect:/login");
+        }
     }
 
 

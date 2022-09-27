@@ -59,11 +59,12 @@ public class UserService {
         Optional<User> user = userRepository.findByEmail(email);
         if(user.isPresent()){
             System.out.println("Usuario Existe");
-            if(user.get().password==password){
+            if(user.get().password.equals(password)){
                 System.out.println("La contraseña es la misma");
 
             }else{
-                throw new MyCustomException("El usuario no existe");
+                System.out.println("contraseña enviada: "+password + " Contraseña usuario: "+user.get().password);
+                throw new MyCustomException("La contraseña es invalida");
             }
         }
 
