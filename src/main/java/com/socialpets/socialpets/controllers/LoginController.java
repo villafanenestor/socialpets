@@ -1,5 +1,6 @@
 package com.socialpets.socialpets.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,14 +17,15 @@ public class LoginController {
     
     @PostMapping("/login")
     public ModelAndView login(@ModelAttribute("user") User user, Model model){
-        // System.out.println("Email: "+user.email+" Password: "+user.password);
 
         try{
             boolean userExist = userService.login(user.email, user.password);
-            return new ModelAndView("redirect:/home");
+            if(userExist){
+                return new ModelAndView("redirect:/home");
+            }else{
+                return new ModelAndView("redirect:/login");
+            }
         } catch (Exception e) {
-            // TODO: handle exception
-            // System.out.println(e);
             return new ModelAndView("redirect:/login");
         }
     }
