@@ -72,23 +72,5 @@ public class UserController {
 
     }
 
-    
-
-    
-    
-    @PostMapping("/login")
-    public ModelAndView login(@ModelAttribute("user") User user, Model model){
-        System.out.println("Email: "+user.email+" Password: "+user.password);
-
-        try{
-            boolean userExist = userService.login(user.email, user.password);
-            return new ModelAndView("redirect:/home");
-        } catch (Exception e) {
-            // TODO: handle exception
-            System.out.println(e);
-            return new ModelAndView("redirect:/login");
-        }
-    }
-
 
 }
