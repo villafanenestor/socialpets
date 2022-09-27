@@ -15,7 +15,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
     
-    @PostMapping("/login")
+    @PostMapping("/signin")
     public ModelAndView login(@ModelAttribute("user") User user, Model model){
 
         try{
