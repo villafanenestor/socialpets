@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th=http://www.thymeleaf.org>
 
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,10 @@
     <title>SocialPets</title>
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
    
->
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
     
 
     <meta name="theme-color" content="#2091F9">
@@ -43,54 +43,55 @@
                     <a href="#" class="nav__links">Rescata un amigo</a>
                 </li>
                 <li class="nav__items">
-                    <a href="/loginPage" class="nav__links">Soy persona</a>
+                    <a href="/loginpersonas" class="nav__links">Soy persona</a>
                 </li>
                 <li class="nav__items">
-                    <a href="/loginPage" class="nav__links">Soy Fundacion</a>
+                    <a href="/loginfundacion" class="nav__links">Soy Fundacion</a>
                 </li>
             </ul>
-
         </nav>
-        <form>
-            <div class="popup">
-               
-                <div class="form">
-                    <h2>Registrate</h2>
-                    <div class="form-element">
-                        <label for="email">Email</label>
-                        <input type="text" id="email" placeholder="Ingresa tu Email">
+
+        
+    
+            <div class="popup"> 
+                <form action="#" th:action="@{/signup}" method="post" th:objet="${user}">
+                    <div class="form">
+                        <h2>Registrate</h2>
+                        <div class="form-element" >
+                            <label for="rol">Registrarme como</label>
+    
+                            <select class="form-select" name="rol" id="rol" th:field="*{user.rol}" >
+                                <option value="SALVADOR">Persona</option>
+                                <option value="FUNDACION">Fundacion</option>
+                            </select>
+                        </div>
+                        <div class="form-element">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" th:field="*{user.nombre}" placeholder="Ingresa tu Nombre">
+                        </div>
+                        
+                        <div class="form-element">
+                            <label for="email">Email</label>
+                            <input  type="email" id="email" name="email" th:field="*{user.email}" placeholder="Ingresa tu Email">
+                        </div>
+                        <div class="form-element">
+                            <label for="password">Contraseña</label>
+                            <input  type="password" id="password" name="password"  th:field="*{user.password}" placeholder="Ingresa tu Contraseña">
+                        </div>
+                        <div class="form-element">
+                                <button>Registrate</button>
+                        </div>
+                        <div>
+                            <!-- <h2>oekgio</h2> -->
+                            <!-- <span th:if="${attribute == 'redirectWithRedirectView'}">Female</span> -->
+                            <p th:text="${param.attribute}">Test</p>
+                
+                            <!-- <span>Female</span> -->
+                         </div>
                     </div>
-                    <div class="form-element">
-                        <label for="password">Contraseña</label>
-                        <input type="password" id="password" placeholder="Ingresa tu Contraseña">
-                    </div>
-                    <div class="form-element">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="Nombre" placeholder="Ingresa tu Nombre">
-                    </div>
-                    
-                    <div class="form-element">
-                        <label for="Ciudad">Ciudad</label>
-                        <input type="text" id="Ciudad" placeholder="Ciudad de residencia">
-                    </div>
-                    <div class="form-element">
-                        <label for="Ciudad">Departamento</label>
-                        <input type="text" id="Departamento" placeholder="Departamento">
-                    </div>
-                    <div class="form-element">
-                        <label for="Direccion">Direccion</label>
-                        <input type="text-number" id="Direccion" placeholder="Direccion de residencia">
-                    </div>
-                    <div class="form-element">
-                        <label for="telefono">telefono</label>
-                        <input type="text-number" id="cel" placeholder="Numero de telefono +57">
-                    </div>
-                    <div class="form-element">
-                            <button>Registrate</button>
-                    </div>
-                </div>
+
+                </form>
             </div>
-        </form>
 
     </header>
     <main>  
@@ -108,8 +109,8 @@
     <script src="./js/slider.js"></script>
     <script src="./js/questions.js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./bootstrap/js/bootstrap.js"></script>
 
 
-    
 
 </body>

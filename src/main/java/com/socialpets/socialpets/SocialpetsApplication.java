@@ -13,16 +13,16 @@ public class SocialpetsApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SocialpetsApplication.class, args);
-		UserRepository repository = context.getBean(UserRepository.class);
-		repository.save( 
-		User.builder()
-		.id(null)
-		.nombre("Nestor")
-		.email("mass.nestor@gmail.com")
-		.password("12345678")
-		.rol(Role.ADMINISTRADOR)
-		.build()
-		);	
+		// UserRepository repository = context.getBean(UserRepository.class);
+		// repository.save( 
+		// User.builder()
+		// .id(null)
+		// .nombre("Nestor")
+		// .email("mass.nestor@gmail.com")
+		// .password("12345678")
+		// .rol(Role.ADMINISTRADOR)
+		// .build()
+		// );	
 	}
 
 }
