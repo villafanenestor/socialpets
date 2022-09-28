@@ -81,11 +81,11 @@
                         <div class="form-element">
                                 <button>Registrate</button>
                         </div>
-                        <div>
+                        <div class="alert alert-danger" th:if="${error != null}">
                             <!-- <h2>oekgio</h2> -->
                             <!-- <span th:if="${attribute == 'redirectWithRedirectView'}">Female</span> -->
-                            <p th:text="${param.attribute}">Test</p>
-                
+                            <p  th:text="${error}"></p>
+                            
                             <!-- <span>Female</span> -->
                          </div>
                     </div>

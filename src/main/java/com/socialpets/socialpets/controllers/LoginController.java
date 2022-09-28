@@ -33,19 +33,18 @@ public class LoginController {
 
 
     @PostMapping("/signup")
-    public ModelAndView register(@ModelAttribute("user") User user, ModelMap model){
+    public String register(@ModelAttribute("user") User user, ModelMap model){
         try {
             Boolean userCreated = userService.register(user.rol.toString(), user.nombre, user.password, user.email);
             if(userCreated){
-                // model.addAttribute("attribute", "f");
-                return new ModelAndView("redirect:/home");
+                return "home";
             }else{
-                model.addAttribute("attribute", "El usuario ya existe");
-                return new ModelAndView("redirect:/register", model);
+                model.addAttribute("error", "El usuario ya existe");
+                return "register";
             }
         }catch (Exception e) {
-            model.addAttribute("attribute", e.toString());
-            return new ModelAndView("redirect:/register", model);
+            model.addAttribute("error", e.getMessage());
+            return "register";
         }
     }
 
