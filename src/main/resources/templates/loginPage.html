@@ -27,41 +27,40 @@
         
 
         <div class="popup">
-    <form action="#" th:action="@{/signin}" method="post" th:objet="${user}">
-        <div class="form">
-            <h2>Inicia sesion</h2>
-            <div class="form-element">
-                <label for="email">Email</label>
-                <input  type="email" id="email" name="email" th:field="*{user.email}" placeholder="Ingresa tu Email">
-            </div>
-            <div class="form-element">
-                <label for="password">Contraseña</label>
-                <input  type="password" id="password" name="password"  th:field="*{user.password}" placeholder="Ingresa tu Contraseña">
-            </div>
-            <div class="form-element">
-                <input type="checkbox" id="remember-me">
-                <label for="remember-me">Recordarme<a href=""></a></label>
-            </div>
-            
-            <div class="form-element">
-                <label for="login" id="login"></label>
-                <button type="submit"  class="send_btn">Inicia sesion</button>
-            </div>
+            <form action="#" th:action="@{/signin}" method="post" th:objet="${user}">
+                <div class="form">
+                    <h2>Inicia sesion</h2>
+                    <div class="form-element">
+                        <label for="email">Email</label>
+                        <input  type="email" id="email" name="email" th:field="*{user.email}" placeholder="Ingresa tu Email">
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Contraseña</label>
+                        <input  type="password" id="password" name="password"  th:field="*{user.password}" placeholder="Ingresa tu Contraseña">
+                    </div>
+                    <div class="form-element">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Recordarme<a href=""></a></label>
+                    </div>
+                    
+                    <div class="form-element">
+                        <label for="login" id="login"></label>
+                        <button type="submit"  class="send_btn">Inicia sesion</button>
+                    </div>
 
-            
-            <div class="form-element">
-                <a href="fpass">Olvidaste tu Contraseña?</a>
-                
-            </div>
+                    
+                    <div class="form-element">
+                        <a href="fpass">Olvidaste tu Contraseña?</a>
+                    </div>
+                    <div class="form-element">
+                        <a href="/register">
+                            Registrate ahora
+                        </a>   
+                    </div>
+                </div>
+            </form>
+
         </div>
-    </form>
-    <div class="form-element">
-        <label for="register" id="register">Eres nuevo?</label>
-        <a href="/register">
-            <button>Registrates</button>
-        </a>   
-    </div>
-</div>
     </header>
     <main>  
         <section class="footer__copy container">

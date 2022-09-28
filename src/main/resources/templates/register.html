@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SocialPets</title>
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
-   
+
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/login.css">
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    
+
     
 
     <meta name="theme-color" content="#2091F9">
@@ -32,7 +33,7 @@
                 <form action="#" th:action="@{/signup}" method="post" th:objet="${user}">
                     <div class="form">
                         <h2>Registrate</h2>
-                        <div class="form-element" >
+                        <div class="form-element">
                             <label for="rol">Registrarme como</label>
     
                             <select class="form-select" name="rol" id="rol" th:field="*{user.rol}" >
