@@ -43,20 +43,19 @@ public class UserService {
     }
 
 
-    public boolean login(String email, String password) throws MyCustomException{
+    public Optional<User> login(String email, String password) throws MyCustomException{
         validarLogin(email, password);
         Optional<User> user = userRepository.findByEmail(email);
         if(user.isPresent()){
             System.out.println("Usuario Existe");
             if(user.get().password.equals(password)){
                 System.out.println("La contraseña es la misma");
-                return true;
             }else{
                 System.out.println("contraseña enviada: "+password + " Contraseña usuario: "+user.get().password);
                 throw new MyCustomException("La contraseña es invalida");
             }
         }
-        return false;
+        return user;
     }
 
 

@@ -1,4 +1,3 @@
-<html>
     <!-- Fragmento Head -->
     <div th:replace="fragments/head"></div>
     <!-- Fragmento Head --> 
@@ -11,7 +10,12 @@
 
             <section class="hero__container container">
                 <div class="title">
-                    <h1>Bienvenido  '#' a SocialPets </h1>
+                    <h1>Bienvenido  
+                        <!-- <p th:if="${nombreUsuario}"> -->
+                            <!-- <strong  th:text="${nombreUsuario}"></strong> -->
+                            <strong  th:text="${datoUsuario.email}"></strong>
+                         <!-- </p> -->
+                        a SocialPets </h1>
                 </div>
                 <div class="title">
                     <h3>A continuacion te ofreceremos una lista de nuestras opciones disponibles</h3>

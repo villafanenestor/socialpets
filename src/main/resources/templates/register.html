@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
     
 
     
@@ -30,7 +31,7 @@
         
     
             <div class="popup"> 
-                <form action="#" th:action="@{/signup}" method="post" th:objet="${user}">
+                <form action="#" th:action="@{/register}" method="post" th:objet="${user}">
                     <div class="form">
                         <h2>Registrate</h2>
                         <div class="form-element">
@@ -57,13 +58,19 @@
                         <div class="form-element">
                                 <button>Registrate</button>
                         </div>
+                        <div class="form-element">
+                            <a href="/login">
+                                Iniciar session
+                            </a>   
+                        </div>
                         <div class="alert alert-danger" th:if="${error != null}">
-                            <!-- <h2>oekgio</h2> -->
-                            <!-- <span th:if="${attribute == 'redirectWithRedirectView'}">Female</span> -->
                             <p  th:text="${error}"></p>
-                            <!-- <span>Female</span> -->
+                         </div>
+                        <div class="alert alert-success" th:if="${exito != null}">
+                            <p  th:text="${exito}"></p>
                          </div>
                     </div>
+                    
 
                 </form>
             </div>

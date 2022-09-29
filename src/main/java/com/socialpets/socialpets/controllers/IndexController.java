@@ -27,54 +27,13 @@ public class IndexController {
         return "nosotros";
     }
 
-    @GetMapping("/fotter")
-    public String fotter(){
-        return "fotter/fotter";
-    }
-
-    @GetMapping("/loginpersonas")
-    public String login1(){
-        return "loginpersonas";
-    }
-
-    @GetMapping("/loginfundacion")
-    public String login2(){
-        return "loginfundacion";
-    }
-
-    @GetMapping("/registrof")
-    public String registerf(){
-        return "registrof";
-    }
-    
-    @GetMapping("/registerpersonas")
-    public String register1(){
-        return "registerpersonas";
-    }
     
     @GetMapping("/fpass")
     public String fpass(){
         return "fpass";
     }
     
-    @GetMapping("/register")
-    public String register(Model model){
-        model.addAttribute("user", new User());
-        return "register";
-    }
 
-
-
-    @GetMapping("/login")
-    public String registerf(Model model){
-        model.addAttribute("user", new User());
-        return "loginPage";
-    }
-
-    @GetMapping({"/home", "/inicio"})
-    public String home(){
-        return "home";
-    }
             
 
     // @GetMapping("/loginPage={templateName}")

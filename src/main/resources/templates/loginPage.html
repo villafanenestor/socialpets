@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    
     
 
     <meta name="theme-color" content="#2091F9">
@@ -27,7 +29,7 @@
         
 
         <div class="popup">
-            <form action="#" th:action="@{/signin}" method="post" th:objet="${user}">
+            <form action="#" th:action="@{/login}" method="post" th:objet="${user}">
                 <div class="form">
                     <h2>Inicia sesion</h2>
                     <div class="form-element">
@@ -46,6 +48,9 @@
                     <div class="form-element">
                         <label for="login" id="login"></label>
                         <button type="submit"  class="send_btn">Inicia sesion</button>
+                    </div>
+                    <div class="alert alert-danger" th:if="${error != null}">
+                        <strong th:text="${error}"></strong>
                     </div>
 
                     
@@ -77,6 +82,8 @@
     <script src="./js/slider.js"></script>
     <script src="./js/questions.js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./bootstrap/js/bootstrap.js"></script>
+
 
 
     
