@@ -2,6 +2,7 @@ package com.socialpets.socialpets.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,25 +17,22 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "pets")
 @NoArgsConstructor @AllArgsConstructor @Data
-public class MascotaModel {
+public class Mascota {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @Column(name = "Tipo")
-    private String type;
-    private String raza;    
+    private String tipo;
     private String peso;
-    // Relacion con la tabal de obsevacion mascotas
+    private String nombre;
     private String observaciones;
-    @Enumerated()
+    @Column(name = "genero")
+    @Enumerated(EnumType.STRING)
     private GenderEnum genderEnum;
-    private String ubicacion;
     private String foto;
     private boolean adoptada= false;
 
-    @ManyToOne
-    private Adopcion adopcion;
-
+    public boolean getAdoptcion(){
+        return this.adoptada;
+    }
 }

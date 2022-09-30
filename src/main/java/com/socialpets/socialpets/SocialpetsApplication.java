@@ -6,14 +6,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.socialpets.socialpets.models.User;
 import com.socialpets.socialpets.models.Role;
+import com.socialpets.socialpets.repositories.MascotaRepository;
 import com.socialpets.socialpets.repositories.UserRepository;
+import com.socialpets.socialpets.services.mascotaService;
 
 @SpringBootApplication
 public class SocialpetsApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SocialpetsApplication.class, args);
-		// UserRepository repository = context.getBean(UserRepository.class);
+		// MascotaRepository repository = context.getBean(MascotaRepository.class);
+		// System.out.println("Listado de mascotas: "+repository.findMascotasByAdopcion(false));
 		// repository.save( 
 		// User.builder()
 		// .id(null)

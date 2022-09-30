@@ -1,0 +1,75 @@
+<div th:replace="fragments/head"></div>
+
+<body>
+
+
+
+    <section class="price container">
+        <h2 class="subtitle">Nuestros llegados mas recientes</h2>
+
+        <div class="price__table">
+
+            <div class="price__element" th:each="mascota:${mascotas}">
+                <p class="price__name"></p>
+                <img  th:src="${mascota.foto}" class="price_images">
+    
+                <div class="price__items">
+                    <h4>Soy</h4>
+                    <h3 class="price__price" th:text="${mascota.nombre}" ></h3>
+                </div>
+                <div>
+                    <h6>Observación</h6>
+                    <p th:text="${mascota.observaciones}"></p>
+                    <strong>Peso <strong th:text="${mascota.peso}"></strong>kg</strong>
+                </div>
+                <div>
+                    <p>Tipo mascota <Strong th:text="${mascota.tipo}"></Strong></p>
+                </div>
+    
+                <a th:href="@{/login/}+${mascota.id}" class="price__cta">Adoptame ya</a>
+            </div>
+    
+        </div>
+    
+        <!-- <div class="price__table">
+            <div class="price__element">
+                <p class="price__name"></p>
+                <img src="./images/Sam.jpg" class="price_images">
+    
+                <div class="price__items">
+                    <h3 class="price__price">Sam</h3>
+                </div>
+    
+                <a href="#" class="price__cta">Adopta ahora</a>
+            </div>
+    
+    
+            <div class="price__element">
+                <p class="price__name"></p>
+                <img src="./images/Nala.jpg" class="price_images">
+    
+                <div class="price__items">
+                    <h3 class="price__price">Nala</h3>
+                </div>
+    
+                <a href="#" class="price__cta">Adopta ahora</a>
+            </div>
+    
+    
+            <div class="price__element">
+                <p class="price__name"></p>
+                <img src="./images/Roy.jpg" class="price_images" >
+    
+                <div class="price__items">
+                    <h3 class="price__price">Roy</h3>
+                </div>
+    
+                <a href="#" class="price__cta">Adopta ahora</a>
+            </div>
+    
+    
+        </div> -->
+    </section>
+    
+</body>
+</html>
