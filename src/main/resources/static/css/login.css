@@ -51,7 +51,7 @@ body{
     color: #222;
 }
 
-.popup .form .form-element input[type=text],.popup .form .form-element input[type=password],.form-element  input[type=email] {
+.popup .form .form-element input[type=text],.popup .form .form-element input[type=password],.form-element  input[type=email], .form-element  input[type=number], select {
     margin-top: 5px;
     display: block;
     width: 100%;

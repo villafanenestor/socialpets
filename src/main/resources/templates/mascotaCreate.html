@@ -1,0 +1,78 @@
+
+<div th:replace="fragments/head"></div>
+<body>
+    <header class="hero">
+        <!-- Fragmento Nav -->
+        <!-- <div th:replace="fragments/headerNav"></div> -->
+        <!-- Fragmento Nav -->
+        
+
+        <div class="popup">
+            <form action="#" th:action="@{/mascotas}" method="post" th:objet="${mascota}">
+                <div class="form">
+                    <h2>Registro Mascota</h2>
+                    <div class="form-element">
+                        <label for="nombre">Nombre</label>
+                        <input th:field="*{mascota.nombre}" type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre de la mascota">
+                    </div>
+                    <div class="form-element">
+                        <label for="tipo">Tipo Mascota</label>
+                        <select name="tipo" id="tipo" th:field="*{mascota.tipo}" >
+                            <option value="">SELECCIONAR</option>
+                            <option value="GATO">GATO</option>
+                            <option value="PERRO">PERRO</option>
+                        </select>
+                    </div>
+                    <div class="form-element">
+                        <label for="peso">Peso</label>
+                        <input th:field="*{mascota.peso}"  type="text" id="peso" name="peso" placeholder="Ingrese el peso de la mascota en kg">
+                    </div>
+                    <div class="form-element">
+                        <label for="genderEnum">Genero Mascota</label>
+                        <select th:field="*{mascota.genderEnum}" name="genderEnum" id="genderEnum" >
+                            <option value="">SELECCIONAR</option>
+                            <option value="HEMBRA">HEMBRA</option>
+                            <option value="MACHO">MACHO</option>
+                        </select>
+                    </div>
+                    <div class="form-element">
+                        <label for="observaciones">Observaciones</label>
+                        <input th:field="*{mascota.observaciones}"  type="text" id="observaciones" name="observaciones" placeholder="Ejemplo: le gustan las cosquillas">
+                    </div>
+                    <div class="form-element">
+                        <label for="foto">Link de foto</label>
+                        <input th:field="*{mascota.foto}"  type="text" id="foto" name="foto"  placeholder="ejemplo: https://images.com/cachorro.jpg">
+                    </div>
+                    
+                    <div class="form-element">
+                        <label for="login" id="login"></label>
+                        <button type="submit"  class="send_btn">Crear Mascota</button>
+                    </div>
+                    <div class="alert alert-success" th:if="${exito != null}">
+                        <p  th:text="${exito}"></p>
+                     </div>
+                    <div class="alert alert-danger" th:if="${error != null}">
+                        <strong th:text="${error}"></strong>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </header>
+    <main>  
+        <section class="footer__copy container">
+            <div class="footer__social">
+                <a href="#" class="footer__icons"><img src="/images/facebook.svg" class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="/images/twitter.svg" class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="/images/youtube.svg" class="footer__img"></a>
+            </div>
+
+            <h3 class="footer__copyright">Derechos reservados &copy; SocialPets team</h3>
+        </section>
+
+
+        <div th:replace="fragments/scritps"></div>
+    
+
+</body>
