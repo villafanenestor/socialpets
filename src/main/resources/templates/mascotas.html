@@ -9,25 +9,28 @@
 
         <div class="price__table">
 
-            <div class="price__element" th:each="mascota:${mascotas}">
-                <p class="price__name"></p>
-                <img  th:src="${mascota.foto}" class="price_images">
-    
-                <div class="price__items">
-                    <h4>Soy</h4>
-                    <h3 class="price__price" th:text="${mascota.nombre}" ></h3>
+            <div class="price__element" th:each="mascota, index :${mascotas}">
+                <div if:if${index =< 3}>
+
+                        <p class="price__name"></p>
+                        <img  th:src="${mascota.foto}" class="price_images">
+                        
+                        <div class="price__items">
+                            <h4>Soy</h4>
+                            <h3 class="price__price" th:text="${mascota.nombre}" ></h3>
+                        </div>
+                        <div>
+                            <h6>Observación</h6>
+                            <p th:text="${mascota.observaciones}"></p>
+                            <strong>Peso <strong th:text="${mascota.peso}"></strong>kg</strong>
+                        </div>
+                        <div>
+                            <p>Tipo mascota <Strong th:text="${mascota.tipo}"></Strong></p>
+                        </div>
+            
+                        <a th:href="@{/login/}+${mascota.id}" class="price__cta">Adoptame ya</a>
+                        </div>
                 </div>
-                <div>
-                    <h6>Observación</h6>
-                    <p th:text="${mascota.observaciones}"></p>
-                    <strong>Peso <strong th:text="${mascota.peso}"></strong>kg</strong>
-                </div>
-                <div>
-                    <p>Tipo mascota <Strong th:text="${mascota.tipo}"></Strong></p>
-                </div>
-    
-                <a th:href="@{/login/}+${mascota.id}" class="price__cta">Adoptame ya</a>
-            </div>
     
         </div>
     

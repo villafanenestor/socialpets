@@ -4,11 +4,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.socialpets.socialpets.models.User;
-import com.socialpets.socialpets.models.Role;
-import com.socialpets.socialpets.repositories.MascotaRepository;
-import com.socialpets.socialpets.repositories.UserRepository;
-import com.socialpets.socialpets.services.mascotaService;
+// import com.socialpets.socialpets.models.User;
+// import com.socialpets.socialpets.models.Role;
+// import com.socialpets.socialpets.repositories.MascotaRepository;
+// import com.socialpets.socialpets.repositories.UserRepository;
+// import com.socialpets.socialpets.services.MascotaService;
 
 @SpringBootApplication
 public class SocialpetsApplication {
