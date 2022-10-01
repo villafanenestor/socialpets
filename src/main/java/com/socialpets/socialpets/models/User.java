@@ -10,42 +10,45 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Table( name = "app_users")
+@Getter
+@Setter
 @Builder()
 public class User implements Serializable {
 
     @Id()
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    public Long id;
+    private Long id;
 
     // @Column(name = "name", nullable = false, unique = true)
     // @NotBlank(message = "El nombre es obligatorio")
-    public String nombre;
+    private String nombre;
 
     @Column(name = "email", nullable = false, unique = true)
     // @Email(message = "El Email no es valido")
     @NotBlank(message = "El Email es obligatorio")
-    public String email;
+    private String email;
 
     @NotBlank(message = "La contraseña es obligatoria")
     @Size(min = 8)
-    public String password;
+    private String password;
     
     @Enumerated(EnumType.STRING)
-    public Role rol;
+    private Role rol;
 
   
 }

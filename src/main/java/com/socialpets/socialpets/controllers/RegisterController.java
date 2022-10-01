@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.socialpets.socialpets.models.User;
-import com.socialpets.socialpets.repositories.UserRepository;
 import com.socialpets.socialpets.services.UserService;
 
 @Controller
@@ -30,7 +29,7 @@ public class RegisterController {
     @PostMapping()
     public String register(@ModelAttribute("user") User user, ModelMap model){
         try {
-            Boolean userCreated = userService.register(user.rol.toString(), user.nombre, user.password, user.email);
+            Boolean userCreated = userService.register(user.getRol().toString(), user.getNombre(), user.getPassword(), user.getEmail());
             if(userCreated){
                 model.addAttribute("exito", "Usuario creado exitosamente.");
             }else{

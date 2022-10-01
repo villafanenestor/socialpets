@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.socialpets.socialpets.models.User;
 import com.socialpets.socialpets.services.UserService;
-import com.socialpets.socialpets.services.mascotaService;
+import com.socialpets.socialpets.services.MascotaService;
 
 @Controller
 @RequestMapping("/login")
@@ -27,27 +27,23 @@ public class LoginController {
     private UserService userService;
 
     @Autowired
-    private mascotaService mascotaService;
+    private MascotaService mascotaService;
     
     @PostMapping()
     public ModelAndView loguearse(@ModelAttribute("user") User user, ModelMap model, RedirectAttributes redirectAttributes, HttpSession httpSession){
         try{
-            Optional<User> usuario = userService.login(user.email, user.password);
+            Optional<User> usuario = userService.login(user.getEmail(), user.getPassword());
             if(usuario.isPresent()){
-                System.out.println("IR A HOME");
-                redirectAttributes.addFlashAttribute("nombreUsuario", usuario.get().nombre.toUpperCase());
+                redirectAttributes.addFlashAttribute("nombreUsuario", usuario.get().getNombre().toUpperCase());
                 if(httpSession.getAttribute("datoUsuario") == null){
                     httpSession.setAttribute("datoUsuario", usuario.get());
                 }
                 return new ModelAndView("redirect:/lobby");
             }else{
-                System.out.println("CONTRASEÑA INCORRECTA");
                 model.addAttribute("error", "Email y/o contraseña incorrecta");
                 return new ModelAndView("loginPage");
             }
         } catch (Exception e) {
-            System.out.println("Error generado");
-            System.out.println("nombre de la excepcion"+e.getMessage());
             model.addAttribute("error", e.getMessage());
             return new ModelAndView("loginPage");
         }
@@ -62,11 +58,9 @@ public class LoginController {
 
     @GetMapping("/{id}")
     public String loginAdoptar(@PathVariable Long id, User user, ModelMap model, RedirectAttributes redirectAttributes){
-        System.out.println("imprimiendo id:"+id);
         try {
             mascotaService.adoptar(id);
         } catch (Exception e) {
-            System.out.println("Se encontro una excepcion: "+e.getMessage());
         }
         return "redirect:/mascotas";
     }

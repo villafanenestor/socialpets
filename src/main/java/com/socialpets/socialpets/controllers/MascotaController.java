@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.socialpets.socialpets.models.Mascota;
 import com.socialpets.socialpets.repositories.MascotaRepository;
-import com.socialpets.socialpets.services.mascotaService;
+import com.socialpets.socialpets.services.MascotaService;
 
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -26,7 +25,7 @@ public class MascotaController {
     MascotaRepository mascotaRepority;
 
     @Autowired
-    mascotaService mascotaService;
+    MascotaService mascotaService;
     
 
 
@@ -37,12 +36,6 @@ public class MascotaController {
         return "mascotas";
     }
 
-    @GetMapping("/create")
-    public ModelAndView mascotaForm(Model model){
-        model.addAttribute("mascota", new Mascota());
-        System.out.println("Formulario de creacion");
-        return new ModelAndView("mascotaCreate");
-    }
 
     @PostMapping()
     public ModelAndView crear(@ModelAttribute("mascota") Mascota mascota, ModelMap model){
