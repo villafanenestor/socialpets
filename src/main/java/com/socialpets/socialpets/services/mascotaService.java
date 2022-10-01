@@ -19,7 +19,7 @@ public class MascotaService {
     MascotaRepository mascotaRepository;
 
 
-    // @Transactional()
+    @Transactional()
     public boolean adoptar(Long id) throws MyCustomException{
 
 
