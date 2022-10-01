@@ -40,16 +40,15 @@ public class mascotaService {
     }
 
     @Transactional()
-    public boolean crear(String tipo, String peso, String nombre, String observaciones, String genero, String foto) throws MyCustomException{
-        validarMascota(tipo, peso, nombre, genero, foto);
-        Mascota mascota = new Mascota( tipo,  peso,  nombre,  observaciones, strginToGenderEnum(genero),  foto);
+    public boolean crear(Mascota mascota) throws MyCustomException{
+        validarMascota(mascota.getTipo(), mascota.getPeso(), mascota.getNombre() , mascota.getGenderEnum() , mascota.getFoto());
         mascotaRepository.save(mascota);
         return true;
     }
 
 
 
-    private void validarMascota(String tipo, String peso, String nombre, String genero, String foto) throws MyCustomException{
+    private void validarMascota(String tipo, String peso, String nombre, GenderEnum genero, String foto) throws MyCustomException{
         if(tipo.isEmpty()){
             throw new MyCustomException("El tipo de la mascota es obligatorio.");
         }
@@ -59,16 +58,14 @@ public class mascotaService {
         else if(nombre.isEmpty()){
             throw new MyCustomException("El nombre de la mascota es obligatorio.");
         }
-        else if(genero.isEmpty()){
-            throw new MyCustomException("El genero de la mascota es obligatorio.");
-        }
         else if(foto.isEmpty()){
             throw new MyCustomException("La foto de la mascota es obligatorio.");
-        }else{
-            if(!genero.equals("HEMBRA") || !genero.equals("MACHO")){
-                throw new MyCustomException("Solo se permite el genero HEMBRA o MACHO.");
-            }
         }
+        // else{
+        //     if(!(genero==GenderEnum.HEMBRA) || !(genero==GenderEnum.MACHO)){
+        //         throw new MyCustomException("Solo se permite el genero HEMBRA o MACHO.");
+        //     }
+        // }
     }
 
 

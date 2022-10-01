@@ -22,17 +22,27 @@ public class Mascota {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String tipo;
-    private String peso;
-    private String nombre;
-    private String observaciones;
-    @Column(name = "genero")
-    @Enumerated(EnumType.STRING)
-    private GenderEnum genderEnum;
-    private String foto;
+        private String tipo;
+        private String peso;
+        private String nombre;
+        private String observaciones;
+        @Column(name = "genero")
+        @Enumerated(EnumType.STRING)
+        private GenderEnum genderEnum;
+        private String foto;
     private boolean adoptada= false;
 
     public boolean getAdoptcion(){
         return this.adoptada;
+    }
+
+    public Mascota(String tipo, String peso, String nombre, String observaciones, GenderEnum genderEnum, String foto){
+        this.id=null;
+        this.tipo = tipo;
+        this.peso = peso;
+        this.nombre = nombre;
+        this.observaciones = observaciones;
+        this.genderEnum = genderEnum;
+        this.foto = foto;
     }
 }
